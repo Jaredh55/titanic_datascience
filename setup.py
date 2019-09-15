@@ -25,7 +25,11 @@ setup(
     author_email='jaredh55@gmail.com',  # Substitute your email
     license='MIT',
     packages=['titanic'],
-    install_requires=['pypandoc>=1.4', 'pytest>=4.3.1', 'pytest-runner>=4.4'],
+    install_requires=['pypandoc>=1.4', 'pytest>=4.3.1', 'pytest-runner>=4.4','click>=7.0'],
     setup_requires=['pytest-runner'],
-    tests_require=['pytest']
+    tests_require=['pytest'],
+    entry_points='''
+        [console_scripts]
+        titanic_analysis=titanic.command_line:titanic_analysis
+    '''
 )
